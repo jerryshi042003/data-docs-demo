@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-10-22T05:02:25.778959+00:00",
+  "generatedAt": "2026-10-22T06:11:48.907405+00:00",
   "title": "Design System: Data Docs",
   "extensions": {
     "colorMeta": {
@@ -123,24 +123,84 @@
           "oklch(84% 0.1241 30.51)",
           "oklch(95% 0.1241 30.51)"
         ]
+      },
+      "map-blue": {
+        "role": "primary",
+        "displayName": "Map connection blue",
+        "canonical": "#3474ba",
+        "tonalRamp": [
+          "oklch(15% 0.1275 252.88)",
+          "oklch(26% 0.1275 252.88)",
+          "oklch(38% 0.1275 252.88)",
+          "oklch(49% 0.1275 252.88)",
+          "oklch(61% 0.1275 252.88)",
+          "oklch(72% 0.1275 252.88)",
+          "oklch(84% 0.1275 252.88)",
+          "oklch(95% 0.1275 252.88)"
+        ]
+      },
+      "map-wash": {
+        "role": "neutral",
+        "displayName": "Pale system blue",
+        "canonical": "#f4f8fc",
+        "tonalRamp": [
+          "oklch(15% 0.0068 247.89)",
+          "oklch(26% 0.0068 247.89)",
+          "oklch(38% 0.0068 247.89)",
+          "oklch(49% 0.0068 247.89)",
+          "oklch(61% 0.0068 247.89)",
+          "oklch(72% 0.0068 247.89)",
+          "oklch(84% 0.0068 247.89)",
+          "oklch(95% 0.0068 247.89)"
+        ]
+      },
+      "map-boundary": {
+        "role": "neutral",
+        "displayName": "System boundary blue",
+        "canonical": "#b1c7dc",
+        "tonalRamp": [
+          "oklch(15% 0.0381 247.04)",
+          "oklch(26% 0.0381 247.04)",
+          "oklch(38% 0.0381 247.04)",
+          "oklch(49% 0.0381 247.04)",
+          "oklch(61% 0.0381 247.04)",
+          "oklch(72% 0.0381 247.04)",
+          "oklch(84% 0.0381 247.04)",
+          "oklch(95% 0.0381 247.04)"
+        ]
+      },
+      "map-node-line": {
+        "role": "neutral",
+        "displayName": "Node boundary gray",
+        "canonical": "#b9c7d4",
+        "tonalRamp": [
+          "oklch(15% 0.0239 246.09)",
+          "oklch(26% 0.0239 246.09)",
+          "oklch(38% 0.0239 246.09)",
+          "oklch(49% 0.0239 246.09)",
+          "oklch(61% 0.0239 246.09)",
+          "oklch(72% 0.0239 246.09)",
+          "oklch(84% 0.0239 246.09)",
+          "oklch(95% 0.0239 246.09)"
+        ]
       }
     },
     "typographyMeta": {
       "headline": {
         "displayName": "Page headline",
-        "purpose": "Page title; reduced to 30px on phones."
+        "purpose": "Page title; 23px desktop and 22px at 760px and below."
       },
       "title": {
         "displayName": "Section title",
-        "purpose": "Section headings; reduced to 23px on phones."
+        "purpose": "Section headings; 18px across breakpoints."
       },
       "body": {
         "displayName": "Reading text",
-        "purpose": "Main explanatory copy, up to 72ch."
+        "purpose": "Main prose at 15px; section/detail copy up to 75ch, otherwise 72ch."
       },
       "label": {
         "displayName": "Control label",
-        "purpose": "Visible native control labels."
+        "purpose": "Visible native control labels at 15px; ordinary labels 400, checkbox labels 500."
       }
     },
     "shadows": [
@@ -172,8 +232,8 @@
         "value": "760px"
       },
       {
-        "name": "two-column-max",
-        "value": "1150px"
+        "name": "compact-rail-max",
+        "value": "1000px"
       },
       {
         "name": "wide-min",
@@ -187,23 +247,23 @@
       "kind": "button",
       "description": "Compact native action used by the receipt simulation.",
       "html": "<button class=\"ds-button\">Submit example</button>",
-      "css": ".ds-button{font-family:Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif;font-size:16px;line-height:1.65;color:var(--ink,#17202a);background:var(--paper,#fff);border:1px solid #b8c2cc;border-radius:6px;padding:8px 14px;font-weight:600;cursor:pointer}.ds-button:hover{background:var(--wash,#eef3fd);border-color:var(--blue,#2458d3)}.ds-button:focus-visible{outline:3px solid var(--blue,#2458d3);outline-offset:3px;}.ds-button:disabled{cursor:default;opacity:.5}",
+      "css": ".ds-button{font-family:Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif;font-size:16px;line-height:1.65;color:var(--ink,#17202a);background:var(--paper,#fff);border:1px solid #b8c2cc;border-radius:6px;padding:8px 14px;font-weight:500;cursor:pointer}.ds-button:hover{background:var(--wash,#eef3fd);border-color:var(--blue,#2458d3)}.ds-button:focus-visible{outline:3px solid var(--blue,#2458d3);outline-offset:3px;}.ds-button:disabled{cursor:default;opacity:.5}",
       "refersTo": "button"
     },
     {
       "name": "Payment input",
       "kind": "input",
       "description": "Native bounded number input with a visible range.",
-      "html": "<label class=\"ds-label\">Payment received ($30\u2013$600)<input class=\"ds-number\" type=\"number\" min=\"30\" max=\"600\" step=\"1\" value=\"240\"></label>",
-      "css": ".ds-label{font-family:Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif;font-size:16px;line-height:1.65;color:var(--ink,#17202a);font-size:14px;font-weight:600;display:grid;gap:6px}.ds-number{font:inherit;width:100%;min-width:0;border:1px solid #bbc5cf;border-radius:5px;padding:7px 9px;background:var(--paper,#fff);color:var(--ink,#17202a);caret-color:var(--blue,#2458d3)}.ds-number:focus-visible{outline:3px solid var(--blue,#2458d3);outline-offset:3px;}",
+      "html": "<label class=\"ds-label\">Payment received ($30–$600)<input class=\"ds-number\" type=\"number\" min=\"30\" max=\"600\" step=\"1\" value=\"240\"></label>",
+      "css": ".ds-label{font-family:Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif;font-size:16px;line-height:1.65;color:var(--ink,#17202a);font-size:15px;font-weight:400;display:grid;gap:6px}.ds-number{font:inherit;width:100%;min-width:0;border:1px solid #bbc5cf;border-radius:5px;padding:7px 9px;background:var(--paper,#fff);color:var(--ink,#17202a);caret-color:var(--blue,#2458d3)}.ds-number:focus-visible{outline:3px solid var(--blue,#2458d3);outline-offset:3px;}",
       "refersTo": "field"
     },
     {
       "name": "Question selector",
       "kind": "input",
       "description": "Full-row native question selector.",
-      "html": "<label class=\"ds-question\">Question<select><option>What are my sales?</option><option>What are the team\u2019s sales?</option><option>How are we doing?</option></select></label>",
-      "css": ".ds-question{font-family:Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif;font-size:16px;line-height:1.65;color:var(--ink,#17202a);font-size:14px;font-weight:600;display:grid;gap:6px;flex-basis:100%;order:4}.ds-question select{font:inherit;min-width:0;width:100%;border:1px solid #bbc5cf;border-radius:5px;padding:7px 9px;background:var(--paper,#fff);color:var(--ink,#17202a);cursor:pointer}.ds-question select:focus-visible{outline:3px solid var(--blue,#2458d3);outline-offset:3px;}",
+      "html": "<label class=\"ds-question\">Question<select><option>What are my sales?</option><option>What are the team’s sales?</option><option>How are we doing?</option></select></label>",
+      "css": ".ds-question{font-family:Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif;font-size:16px;line-height:1.65;color:var(--ink,#17202a);font-size:15px;font-weight:400;display:grid;gap:6px;flex-basis:100%;order:4}.ds-question select{font:inherit;min-width:0;width:100%;border:1px solid #bbc5cf;border-radius:5px;padding:7px 9px;background:var(--paper,#fff);color:var(--ink,#17202a);cursor:pointer}.ds-question select:focus-visible{outline:3px solid var(--blue,#2458d3);outline-offset:3px;}",
       "refersTo": "field"
     },
     {
@@ -211,15 +271,15 @@
       "kind": "nav",
       "description": "Direct links with an explicit current page.",
       "html": "<nav class=\"ds-nav\" aria-label=\"Stories\"><a href=\"/\" aria-current=\"page\">Commission reporting</a><a href=\"/marketing/\">Marketing audiences</a></nav>",
-      "css": ".ds-nav{font-family:Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif;font-size:16px;line-height:1.65;color:var(--ink,#17202a);}.ds-nav a{display:block;padding:9px 12px;color:var(--muted,#596571);text-decoration:none;line-height:1.45;border-radius:6px}.ds-nav a:hover{background:#f6f8fb;color:var(--ink,#17202a)}.ds-nav a[aria-current=page]{background:var(--wash,#eef3fd);color:var(--blue,#2458d3);font-weight:650}.ds-nav a:focus-visible{outline:3px solid var(--blue,#2458d3);outline-offset:3px;}",
+      "css": ".ds-nav{font-family:Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif;font-size:15px;line-height:1.65;color:var(--ink,#17202a);}.ds-nav a{display:block;padding:9px 12px;color:var(--muted,#596571);text-decoration:none;line-height:1.45;border-radius:6px}.ds-nav a:hover{background:#f6f8fb;color:var(--ink,#17202a)}.ds-nav a[aria-current=page]{background:var(--wash,#eef3fd);color:var(--blue,#2458d3);font-weight:500}.ds-nav a:focus-visible{outline:3px solid var(--blue,#2458d3);outline-offset:3px;}",
       "refersTo": "navigation-current"
     },
     {
       "name": "Simulation frame",
       "kind": "card",
       "description": "Bordered result area and summary strip.",
-      "html": "<section class=\"ds-sim\"><div class=\"ds-result\"><strong>$16.80 payable</strong><span>August \u00b7 payment date August 5.</span></div><p class=\"ds-summary\">Calculated and payable agree because this allocation is not on hold.</p></section>",
-      "css": ".ds-sim{font-family:Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif;font-size:16px;line-height:1.65;color:var(--ink,#17202a);border:1px solid var(--line,#e3e6e8);border-radius:12px;overflow:hidden}.ds-result{padding:20px 22px;background:var(--wash,#eef3fd)}.ds-result strong{display:block;font-size:20px;line-height:1.4;font-weight:650}.ds-result span{display:block;font-size:14px;color:var(--muted,#596571);margin-top:5px}.ds-summary{padding:16px 22px;background:#f6f8fb;border-top:1px solid var(--line,#e3e6e8);font-size:15px;margin:0}",
+      "html": "<section class=\"ds-sim\"><div class=\"ds-result\"><strong>$16.80 payable</strong><span>August · payment date August 5.</span></div><p class=\"ds-summary\">Calculated and payable agree because this allocation is not on hold.</p></section>",
+      "css": ".ds-sim{font-family:Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif;font-size:16px;line-height:1.65;color:var(--ink,#17202a);border:1px solid var(--line,#e3e6e8);border-radius:12px;overflow:hidden}.ds-result{padding:20px 22px;background:var(--wash,#eef3fd)}.ds-result strong{display:block;font-size:18px;line-height:1.4;font-weight:500}.ds-result span{display:block;font-size:14px;color:var(--muted,#596571);margin-top:5px}.ds-summary{padding:16px 22px;background:#f6f8fb;border-top:1px solid var(--line,#e3e6e8);font-size:15px;margin:0}",
       "refersTo": "simulation"
     },
     {
@@ -227,48 +287,54 @@
       "kind": "custom",
       "description": "Native disclosure for secondary explanation.",
       "html": "<details class=\"ds-details\"><summary>What this example leaves configurable</summary><p>Rates, deductions, split credit, reversals, and date rules are business policy.</p></details>",
-      "css": ".ds-details{font-family:Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif;font-size:16px;line-height:1.65;color:var(--ink,#17202a);border-top:1px solid var(--line,#e3e6e8);margin:20px 0;padding:14px 0}.ds-details summary{cursor:pointer;font-weight:600;list-style-position:outside;margin-left:18px}.ds-details summary:focus-visible{outline:3px solid var(--blue,#2458d3);outline-offset:3px;}.ds-details p{margin:16px 0}"
+      "css": ".ds-details{font-family:Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif;font-size:15px;line-height:1.65;color:var(--ink,#17202a);border-top:1px solid var(--line,#e3e6e8);margin:20px 0;padding:14px 0}.ds-details summary{cursor:pointer;font-weight:500;list-style-position:outside;margin-left:18px}.ds-details summary:focus-visible{outline:3px solid var(--blue,#2458d3);outline-offset:3px;}.ds-details p{margin:16px 0;font-size:15px}"
     },
     {
-      "name": "Marketing return path",
+      "name": "System containment and handoff",
       "kind": "custom",
-      "description": "Explicit return from response events to the next audience.",
-      "html": "<div class=\"ds-return\"><span aria-hidden=\"true\">\u21a9</span><div><strong>Return to the next audience</strong><p>Response events \u2192 stored consent changes \u2192 audience rules \u2192 next campaign selection</p></div></div>",
-      "css": ".ds-return{font-family:Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif;font-size:16px;line-height:1.65;color:var(--ink,#17202a);display:flex;align-items:center;gap:16px;padding:16px 18px;border:1px solid var(--line,#e3e6e8);border-radius:8px}.ds-return>span{font-size:26px;color:var(--blue,#2458d3)}.ds-return strong{font-size:15px}.ds-return p{font-size:14px;color:var(--muted,#596571);margin:5px 0}"
-    },
-    {
-      "name": "Independent lineage paths",
-      "kind": "custom",
-      "description": "Release and data paths converge only at the visible report.",
-      "html": "<div class=\"ds-convergence\"><div class=\"ds-path\"><strong>Release path</strong><div>Commit + build</div><span aria-hidden=\"true\">\u2192</span><div>Published version</div></div><div class=\"ds-path\"><strong>Data path</strong><div>Source records</div><span aria-hidden=\"true\">\u2192</span><div>Warehouse output</div><span aria-hidden=\"true\">\u2192</span><div>Reporting model</div></div><div class=\"ds-join\"><span aria-hidden=\"true\">\u2193</span><strong>Visible report</strong><span>Uses the published application and the refreshed reporting model</span></div></div>",
-      "css": ".ds-convergence{font-family:Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif;font-size:16px;line-height:1.65;color:var(--ink,#17202a);border:1px solid var(--line,#e3e6e8);border-radius:8px;padding:20px}.ds-path{display:flex;gap:12px;align-items:center;margin:0 0 20px}.ds-path>strong{font-size:14px;flex:0 0 90px}.ds-path>div{padding:12px;border:1px solid var(--line,#e3e6e8);border-radius:6px;flex:1;font-size:14px}.ds-path>span{color:var(--muted,#596571)}.ds-join{border-top:1px solid var(--line,#e3e6e8);padding-top:16px;display:flex;align-items:center;gap:15px}.ds-join>span:last-child{color:var(--muted,#596571);font-size:13px;max-width:38ch}.ds-join>strong{white-space:nowrap}@media(max-width:760px){.ds-path{display:grid;grid-template-columns:1fr;gap:6px}.ds-path>strong{margin-bottom:5px}.ds-path>span{text-align:center;transform:rotate(90deg)}.ds-join{flex-wrap:wrap}.ds-join>span:last-child{flex-basis:100%;font-size:14px}}"
+      "description": "Representative synthetic warehouse segment using the implemented boundary, node, logo, arrow and owner-detail grammar.",
+      "html": "<div class=\"ds-map-viewport\" tabindex=\"0\" aria-label=\"Warehouse system. Scroll horizontally on a small screen.\"><svg viewBox=\"0 0 850 220\" role=\"img\" aria-label=\"Warehouse containment and labeled handoff\"><defs><marker id=\"ds-map-arrow\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0 0L10 5L0 10Z\" fill=\"#3474ba\"/></marker></defs><rect class=\"ds-boundary\" x=\"10\" y=\"10\" width=\"830\" height=\"200\" rx=\"8\"/><svg width=\"28\" height=\"28\" x=\"25\" y=\"20\" viewBox=\"0 0 256 276\" version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" preserveAspectRatio=\"xMidYMid\">\n    <title>databricks</title>\n    <g>\n        <polygon fill=\"#EE3D2C\" points=\"242.284061 113.629346 128.125652 177.897184 5.88581762 109.224903 1.98239771e-14 112.399277 1.98239771e-14 162.263394 128.125652 234.096823 242.270834 170.080289 242.270834 196.467269 128.125652 260.748334 5.88581762 192.076053 0 195.250426 0 203.794782 128.125652 275.641436 256 203.794782 256 153.94389 250.114182 150.769517 128.125652 219.190493 13.715939 155.17396 13.715939 128.773754 128.125652 192.790287 256 120.970085 256 71.8202015 249.6248 68.1564454 128.125652 136.339344 19.6017567 75.7352622 128.125652 14.8931026 217.285869 64.9820718 225.129217 60.5908551 225.129217 54.480186 128.125652 -3.55271368e-14 1.98239771e-14 71.8334281 1.98239771e-14 79.6635495 128.125652 151.510204 242.270834 87.2291398\"></polygon>\n    </g>\n</svg><text class=\"ds-group-title\" x=\"62\" y=\"40\">Databricks</text><path class=\"ds-edge\" d=\"M300 130H500\" marker-end=\"url(#ds-map-arrow)\"/><text class=\"ds-edge-label\" x=\"400\" y=\"117\" text-anchor=\"middle\">accepted policy</text><a class=\"ds-diagram-node\" href=\"#ds-map-rules\"><title>Validated rules: details</title><rect class=\"ds-node\" x=\"30\" y=\"75\" width=\"270\" height=\"110\" rx=\"6\"/><text class=\"ds-node-title\" x=\"44\" y=\"106\">Validated rules</text><text class=\"ds-map-body\" x=\"44\" y=\"137\">Check → accept or reject</text></a><a class=\"ds-diagram-node\" href=\"#ds-map-rows\"><title>Commission rows: details</title><rect class=\"ds-node\" x=\"500\" y=\"75\" width=\"315\" height=\"110\" rx=\"6\"/><text class=\"ds-node-title\" x=\"514\" y=\"106\">Commission rows</text><text class=\"ds-map-body\" x=\"514\" y=\"137\">Allocate → match → calculate</text></a></svg></div><details class=\"ds-map-detail\" id=\"ds-map-rules\"><summary>Validated rules</summary><p>Owner: Data engineering + policy owner</p></details><details class=\"ds-map-detail\" id=\"ds-map-rows\"><summary>Commission rows</summary><p>Owner: Data engineering</p></details>",
+      "css": ".ds-map-viewport{overflow-x:auto;border:1px solid #dbe3ea;border-radius:7px;background:#fff}.ds-map-viewport>svg{display:block;width:100%;min-width:850px}.ds-map-viewport text{font-family:Arial,sans-serif;fill:#243442}.ds-boundary{fill:#f4f8fc;stroke:#b1c7dc;stroke-width:1.4}.ds-node{fill:#fff;stroke:#b9c7d4;stroke-width:1.4}.ds-diagram-node:hover .ds-node,.ds-diagram-node:focus-visible .ds-node{stroke:#3474ba;stroke-width:2.2}.ds-node-title,.ds-group-title{font-size:17px;font-weight:500}.ds-map-body{font-size:14px;fill:#4b5d6e}.ds-edge{fill:none;stroke:#3474ba;stroke-width:1.8}.ds-edge-label{font-size:13px;fill:#245888}.ds-map-viewport:focus-visible{outline:2px solid var(--blue,#2458d3);outline-offset:3px}.ds-map-detail{font-family:Inter,ui-sans-serif,sans-serif;font-size:15px;line-height:1.65;border-top:1px solid var(--line,#e3e6e8);padding:12px 0}.ds-map-detail summary{font-weight:400;cursor:pointer}.ds-map-detail summary:focus-visible{outline:3px solid var(--blue,#2458d3);outline-offset:3px}.ds-map-detail p{margin:8px 0}"
     }
   ],
   "narrative": {
     "northStar": "The Readable System",
-    "overview": "Read mode preserves the established white documentation canvas, blue top rule, persistent navigation and modest headings. The visual character is quiet, compact and explanatory. Text, controls and directional diagrams carry the work; decorative imagery is absent.\n\nA reader can change one input and inspect the result beside its explanation. Native controls and disclosures keep the page familiar, while static text keeps each story readable without JavaScript.",
+    "overview": "The accepted Shield architecture-map reference defines the quiet visual grammar: product logos, pale blue system boundaries containing white nodes, and labeled blue arrows. The white documentation canvas, blue top rule and story navigation remain. Short labels and compact typography give the map most of the space; ownership and access explanations open on demand.\n\nEach of the five public stories remains a fictional, synthetic example. Actual business maps belong in separate private DataDocs surfaces. Reusing the visual grammar does not make the public examples a record of real business systems.",
     "keyCharacteristics": [
-      "White surfaces with neutral dividers and restrained blue interaction cues.",
-      "One sans-serif reading family with compact headings and readable body text.",
-      "Visible inputs, intermediate values, outcomes and text-labeled states."
+      "Product logos identify systems; nested boundaries express system containment.",
+      "Labeled blue arrows expose handoffs, independent routes and return paths.",
+      "Compact headings and short labels keep prose secondary to the map.",
+      "Native controls and disclosures retain inspectable examples and accessible detail."
     ],
     "rules": [
       {
         "name": "The Text Before Color Rule",
         "body": "Every outcome remains understandable without its color.",
         "section": "colors"
+      },
+      {
+        "name": "The Quiet Hierarchy Rule",
+        "body": "Use the compact heading scale and short labels; do not introduce oversized titles or additional weight tiers to compete with the map.",
+        "section": "typography"
+      },
+      {
+        "name": "The Containment Rule",
+        "body": "Nested boxes are a deliberate exception to the generic nested-card ban: they encode system containment in the architecture map, not decorative card hierarchy.",
+        "section": "shapes"
       }
     ],
     "dos": [
-      "Do preserve the white reading canvas, blue top rule and persistent story navigation.",
-      "Do place explanations beside results and label every state in text.",
-      "Do keep native controls, keyboard focus and readable no-JavaScript content.",
-      "Do adapt directional diagrams to the available width without merging independent paths."
+      "Do preserve the accepted Shield map grammar: product logos, pale blue containment and labeled blue arrows.",
+      "Do keep the map wide, labels short and headings modest.",
+      "Do reveal ownership and access through linked details while keeping the system path visible.",
+      "Do preserve independent release/data routes and explicit return paths.",
+      "Do keep the five public stories synthetic and actual business maps separate in private DataDocs."
     ],
     "donts": [
-      "Don't replace the documentation layout with a slide deck, modal sequence or unrelated card grid.",
-      "Don't use decorative imagery or color alone to explain a state.",
-      "Don't compress the question selector or hide essential system steps inside disclosures."
+      "Don't replace the architecture map with a card grid or stacked mobile cards.",
+      "Don't use decorative imagery, extra weight tiers or prose-heavy nodes to compete with the map.",
+      "Don't remove nested system boundaries under a generic nested-card prohibition.",
+      "Don't treat product logos or the shared visual grammar as evidence that a synthetic map describes a real business system."
     ]
   }
 }

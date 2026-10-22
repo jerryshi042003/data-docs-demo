@@ -1,6 +1,6 @@
 ---
 name: Data Docs
-description: Restrained documentation with inspectable systems examples.
+description: Quiet architecture maps with inspectable synthetic systems examples.
 colors:
   ink: "#17202a"
   muted: "#596571"
@@ -10,40 +10,46 @@ colors:
   paper: "#ffffff"
   success: "#236442"
   error: "#963c2f"
+  map-blue: "#3474ba"
+  map-wash: "#f4f8fc"
+  map-boundary: "#b1c7dc"
+  map-node-line: "#b9c7d4"
 typography:
   headline:
     fontFamily: 'Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif'
-    fontSize: "30px"
-    fontWeight: 730
-    lineHeight: 1.16
-    letterSpacing: "-0.035em"
+    fontSize: "23px"
+    fontWeight: 500
+    lineHeight: 1.4
+    letterSpacing: "-0.015em"
   title:
     fontFamily: 'Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif'
-    fontSize: "22px"
-    fontWeight: 700
-    lineHeight: 1.25
-    letterSpacing: "-0.025em"
+    fontSize: "18px"
+    fontWeight: 500
+    lineHeight: 1.4
+    letterSpacing: "0"
   body:
     fontFamily: 'Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif'
-    fontSize: "16px"
+    fontSize: "15px"
     fontWeight: 400
     lineHeight: 1.65
   label:
     fontFamily: 'Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif'
-    fontSize: "14px"
-    fontWeight: 600
+    fontSize: "15px"
+    fontWeight: 400
     lineHeight: 1.65
 rounded:
   field: "5px"
   control: "6px"
-  node: "8px"
+  node: "6px"
+  boundary: "8px"
+  map-viewport: "7px"
   simulation: "12px"
 spacing:
   compact: "8px"
   small: "12px"
   medium: "16px"
   inset: "22px"
-  section: "24px"
+  section: "26px"
 components:
   button:
     backgroundColor: "{colors.paper}"
@@ -63,6 +69,12 @@ components:
     textColor: "{colors.blue}"
     rounded: "{rounded.control}"
     padding: "9px 12px"
+  system-boundary:
+    backgroundColor: "{colors.map-wash}"
+    rounded: "{rounded.boundary}"
+  system-node:
+    backgroundColor: "{colors.paper}"
+    rounded: "{rounded.node}"
   simulation:
     backgroundColor: "{colors.paper}"
     rounded: "{rounded.simulation}"
@@ -74,75 +86,80 @@ components:
 
 **Creative North Star: "The Readable System"**
 
-Read mode preserves the established white documentation canvas, blue top rule, persistent navigation and modest headings. The visual character is quiet, compact and explanatory. Text, controls and directional diagrams carry the work; decorative imagery is absent.
+The accepted Shield architecture-map reference defines the quiet visual grammar: product logos, pale blue system boundaries containing white nodes, and labeled blue arrows. The white documentation canvas, blue top rule and story navigation remain. Short labels and compact typography give the map most of the space; ownership and access explanations open on demand.
 
-A reader can change one input and inspect the result beside its explanation. Native controls and disclosures keep the page familiar, while static text keeps each story readable without JavaScript.
+Each of the five public stories remains a fictional, synthetic example. Actual business maps belong in separate private DataDocs surfaces. Reusing the visual grammar does not make the public examples a record of real business systems.
 
 **Key Characteristics:**
 
-- White surfaces with neutral dividers and restrained blue interaction cues.
-- One sans-serif reading family with compact headings and readable body text.
-- Visible inputs, intermediate values, outcomes and text-labeled states.
+- Product logos identify systems; nested boundaries express system containment.
+- Labeled blue arrows expose handoffs, independent routes and return paths.
+- Compact headings and short labels keep prose secondary to the map.
+- Native controls and disclosures retain inspectable examples and accessible detail.
 
 ## Colors
 
-The palette uses cool neutrals for reading and one clear blue for interaction. Frontmatter values are normative and correspond to the stylesheet's named custom properties.
+Cool neutrals and pale blue boundaries keep the diagrams quiet. The existing interaction blue remains for navigation and controls; the map uses its own softer blue for arrows and node focus.
 
 - **Interaction blue:** links, keyboard focus, active navigation and the top rule.
-- **Selection wash:** the active navigation item, highlighted result and button hover.
-- **Paper, ink, muted and line:** white canvas, primary text, supporting text and thin boundaries.
-- **Success green and error red:** semantic outcomes, always accompanied by text.
+- **Map blue and map wash:** directional connections and contained system regions.
+- **Map boundary and node line:** thin strokes distinguish containers from their white nodes.
+- **Paper, ink, muted and line:** reading canvas, explanatory text and separators.
+- **Success green and error red:** simulation outcomes accompanied by text.
 
 **The Text Before Color Rule.** Every outcome remains understandable without its color.
 
 ## Typography
 
-The sans-serif stack begins with Inter and falls back to native system fonts. The site does not bundle or fetch Inter; its actual rendered family depends on local availability. Code uses the browser's monospace default.
+The page uses the existing Inter-first sans-serif stack with native system fallbacks. Inter is not bundled or fetched. The SVG renderer currently uses Arial with a sans-serif fallback; this is an implementation difference, not a second brand voice. Code retains the browser's monospace default.
 
-Frontmatter defines the desktop headline, section title, body and form label roles. Subheadings use 18px/1.4. Supporting copy is generally 13–15px; the lead is 17px. Paragraphs stop at 72ch. Result numbers use stronger weight; receipts and summary values use tabular numerals. At 760px and below, the page headline becomes 28px, section titles remain 22px and lead text 16px.
+Frontmatter records the page headline, section title, prose and control-label roles. Subheadings use 16px with a 1.4 line height. Headings, emphasis, buttons and current navigation use weight 500; ordinary prose and most labels use 400. The root still defaults to 16px, while paragraphs, lead copy and control labels explicitly use 15px. Checkbox labels retain weight 500 through their more specific existing selector. Main section and owner-detail prose allow up to 75ch; other paragraphs retain 72ch.
+
+SVG title labels use 17px/500, node copy 14px, arrow labels 13px and workbook samples 12px in viewBox units. The diagram scales with its viewport; these are source units rather than guaranteed rendered pixel sizes. At 760px and below the page headline becomes 22px; section titles remain 18px. Reference-section headings retain 17px, and the outer supporting-detail summary retains its existing 16px rule.
+
+**The Quiet Hierarchy Rule.** Use the compact heading scale and short labels; do not introduce oversized titles or additional weight tiers to compete with the map.
 
 ## Layout
 
-The desktop shell is capped at 1336px with 24px side padding, a 216px story rail, an article track up to 760px, a 160px contents rail and 42px gaps. The sticky header has a 3px blue top rule, a 57px inner row and a 1px bottom border. Story navigation and contents stay visible during desktop reading.
+The desktop shell and header are capped at 1500px. The shell has a 175px story rail and a flexible main column, separated by 34px; there is no visible contents rail. Desktop side padding remains 24px. The header retains its 3px blue top rule, 57px inner row and bottom divider. At 1000px and below, the story rail becomes 150px and the gap 22px. At 760px and below, the shell becomes one column with 16px side padding and a mobile navigation toggle. Wide screens retain the existing 48px shell top padding.
 
-At 1150px and below, the contents rail disappears and the story rail becomes 190px with a 32px gap. At 760px and below, the page becomes one column with 20px side padding; JavaScript enables a menu toggle, while navigation remains readable without JavaScript. At 380px and below, side padding becomes 16px. At 1500px and above, the shell's top padding increases from 38px to 48px.
+The map appears before the example, followed by an ownership/access disclosure. The example remains visible; rules and supporting material sit in a separate native disclosure. Sections use a 26px top margin and 20px top padding with thin separators.
 
-Sections use generous vertical separation and thin top rules. Simulation controls wrap. The question selector occupies a full row. Process sequences stack vertically on phones; lineage paths remain distinct before they meet at the visible report.
+The diagram retains its spatial arrangement on phones. Its inner viewport scrolls horizontally and the SVG has a minimum width of 850px. The surrounding page stays within the screen; map nodes do not become a stacked card list. The viewport can receive keyboard focus and carries a horizontal-scroll label.
 
 ## Elevation & Depth
 
-Surfaces are flat, separated by thin borders and pale fills. Only search results use a shadow (`0 8px 24px #17202a15`) to identify an overlay. No decorative elevation is applied to diagrams or simulations.
+Maps are flat. Pale system regions, thin boundary strokes and white nodes express containment without shadows. Only the search-results overlay uses the established shadow (`0 8px 24px #17202a15`).
 
 ## Shapes
 
-The radius scale distinguishes small fields, controls, diagram nodes and simulation containers. Borders are generally 1px. Step numbers are circles. Tables and section dividers remain straight and unobtrusive.
+System boundaries have gently curved corners (8px), white SVG nodes use 6px corners, and the outer scrolling viewport uses 7px corners. The renderer uses thin 1.4-unit boundary/node strokes and 1.8-unit arrow strokes. Fields, buttons and simulation frames retain their existing compact radius scale.
+
+**The Containment Rule.** Nested boxes are a deliberate exception to the generic nested-card ban: they encode system containment in the architecture map, not decorative card hierarchy.
 
 ## Components
 
-- **Buttons:** white, ink text, a gray border and compact padding; hover uses the selection wash and blue border. Disabled buttons have half opacity. Keyboard focus uses a 3px blue outline with a 3px offset.
-- **Fields:** native number inputs, selects and checkboxes. Fields fill their label width; labels sit above selects and number inputs. The commission payment field visibly names and enforces its $30–$600 range. The question selector spans the controls row.
-- **Navigation and search:** muted story links become blue on a pale active background. Story and section links retain direct URLs. Search uses a pale input and a bordered result overlay. Mobile navigation is controlled by a labeled menu button.
-- **Simulation containers:** rounded bordered frames combine a pale control band, readable result area and summary strip. Calculation steps expose intermediate values; receipts align labels and values; query examples pair an answer with applied scope.
-- **Directional diagrams:** neutral bordered nodes use arrows to express sequence. The marketing loop adds an explicit return path. Release and data paths are independent lanes that meet at the report; they are never drawn as one serial pipeline.
-- **Disclosure:** native details and summary elements hold optional explanations behind a thin top divider. Essential system steps remain visible.
+- **Architecture map:** real product logo assets identify named products. Pale blue group boundaries contain white nodes. Blue arrows carry concise handoff labels, with distinct return and parallel paths where the example requires them. Dashed strokes represent a proposed boundary or an explicitly dashed connection only when the graph data marks it.
+- **System detail:** each SVG node links to a matching native disclosure. Its accessible title names the system; detail text explains the handoff and includes owner/access fields where supplied. The map remains readable before details are opened. Hover and keyboard focus strengthen the node's blue stroke.
+- **Navigation and search:** direct story links use muted text, a pale active background and modest weight. Search remains a bordered overlay; the mobile menu is labeled. No visible contents rail competes with the diagram.
+- **Controls and simulations:** native number fields, selects, checkboxes and compact buttons retain the synthetic examples. The question selector spans the controls row. Buttons use the selection wash on hover, clear keyboard focus and reduced opacity when disabled. Result emphasis is restrained; state remains text-labeled.
+- **Supporting disclosure:** native details and summary elements hide secondary prose. Thin dividers preserve the documentation rhythm without adding another card surface.
 
-Smooth anchor scrolling and a 350ms ease-out background flash are the only motion patterns in the stylesheet. Reduced-motion preferences remove them. The no-JavaScript notice explains that stories remain readable while interactive controls require JavaScript.
+Smooth anchor scrolling and the existing 350ms ease-out result flash remain the only stylesheet motion patterns. Reduced-motion preferences remove them. Static stories and disclosures remain readable without JavaScript; simulation controls need JavaScript.
 
 ## Do's and Don'ts
 
 ### Do
 
-- Do preserve the white reading canvas, blue top rule and persistent story navigation.
-- Do place explanations beside results and label every state in text.
-- Do keep native controls, keyboard focus and readable no-JavaScript content.
-- Do adapt directional diagrams to the available width without merging independent paths.
+- Do preserve the accepted Shield map grammar: product logos, pale blue containment and labeled blue arrows.
+- Do keep the map wide, labels short and headings modest.
+- Do reveal ownership and access through linked details while keeping the system path visible.
+- Do preserve independent release/data routes and explicit return paths.
+- Do keep the five public stories synthetic and actual business maps separate in private DataDocs.
 
 ### Don't
 
-- Don't replace the documentation layout with a slide deck, modal sequence or unrelated card grid.
-- Don't use decorative imagery or color alone to explain a state.
-- Don't compress the question selector or hide essential system steps inside disclosures.
-
-## Map-first refinement
-
-Each story begins with an ownership map using neutral, expandable stage nodes and labeled connectors. Business decisions and permission routes sit inside each stage; the governing ownership boundary remains visible. Supporting reference sections use a native disclosure. The original simulations remain below the map. Headings are 30/22/16px with a 28px phone page title. The desktop shell uses 190px / up to 790px / 150px columns with 30px gaps; maps stack at 760px.
+- Don't replace the architecture map with a card grid or stacked mobile cards.
+- Don't use decorative imagery, extra weight tiers or prose-heavy nodes to compete with the map.
+- Don't remove nested system boundaries under a generic nested-card prohibition.
+- Don't treat product logos or the shared visual grammar as evidence that a synthetic map describes a real business system.

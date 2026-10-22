@@ -13,13 +13,13 @@ colors:
 typography:
   headline:
     fontFamily: 'Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif'
-    fontSize: "38px"
+    fontSize: "30px"
     fontWeight: 730
     lineHeight: 1.16
     letterSpacing: "-0.035em"
   title:
     fontFamily: 'Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif'
-    fontSize: "25px"
+    fontSize: "22px"
     fontWeight: 700
     lineHeight: 1.25
     letterSpacing: "-0.025em"
@@ -99,7 +99,7 @@ The palette uses cool neutrals for reading and one clear blue for interaction. F
 
 The sans-serif stack begins with Inter and falls back to native system fonts. The site does not bundle or fetch Inter; its actual rendered family depends on local availability. Code uses the browser's monospace default.
 
-Frontmatter defines the desktop headline, section title, body and form label roles. Subheadings use 18px/1.4. Supporting copy is generally 13–15px; the lead is 17px. Paragraphs stop at 72ch. Result numbers use stronger weight; receipts and summary values use tabular numerals. At 760px and below, the page headline becomes 30px, section titles 23px and lead text 16px.
+Frontmatter defines the desktop headline, section title, body and form label roles. Subheadings use 18px/1.4. Supporting copy is generally 13–15px; the lead is 17px. Paragraphs stop at 72ch. Result numbers use stronger weight; receipts and summary values use tabular numerals. At 760px and below, the page headline becomes 28px, section titles remain 22px and lead text 16px.
 
 ## Layout
 
@@ -142,3 +142,7 @@ Smooth anchor scrolling and a 350ms ease-out background flash are the only motio
 - Don't replace the documentation layout with a slide deck, modal sequence or unrelated card grid.
 - Don't use decorative imagery or color alone to explain a state.
 - Don't compress the question selector or hide essential system steps inside disclosures.
+
+## Map-first refinement
+
+Each story begins with an ownership map using neutral, expandable stage nodes and labeled connectors. Business decisions and permission routes sit inside each stage; the governing ownership boundary remains visible. Supporting reference sections use a native disclosure. The original simulations remain below the map. Headings are 30/22/16px with a 28px phone page title. The desktop shell uses 190px / up to 790px / 150px columns with 30px gaps; maps stack at 760px.
